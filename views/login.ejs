@@ -1,0 +1,47 @@
+<%- include('partials/_header.ejs') -%>
+<body>
+    <%- include('partials/_navigation.ejs') -%>
+
+ <!-- Start All Title Box -->
+ <%- include('partials/_alt-title.ejs') -%>
+ <!-- End All Title Box -->
+
+    <!-- Start Register  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-1  col-lg-10 col-sm-12">
+                    <div class="contact-form-right">
+                        <center><h2>Login</h2></center>
+                        <form  method="POST" action="/login">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="subject" name="password" placeholder="Please password">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Login</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Register -->
+
+    <%- include('partials/_footer.ejs') -%>
