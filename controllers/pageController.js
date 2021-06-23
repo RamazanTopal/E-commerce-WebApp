@@ -1,3 +1,6 @@
+const User=require('../models/User');
+const Product=require('../models/Product');
+const Category=require('../models/Category');
 exports.getIndex=(req,res)=>{
     res.render("index");
 }

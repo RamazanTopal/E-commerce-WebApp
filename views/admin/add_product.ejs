@@ -1,0 +1,69 @@
+<%- include('../partials/_header.ejs') -%>
+<body>
+    <%- include('../partials/_navigation.ejs') -%>
+
+ <!-- Start All Title Box -->
+ <%- include('../partials/_alt-title.ejs') -%>
+ <!-- End All Title Box -->
+
+    <!-- Start Register  -->
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-1  col-lg-10 col-sm-12">
+                    <div class="contact-form-right">
+                        <center><h2>Add Product</h2></center>
+                        <form  method="POST" action="/admin/add_product">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Product Name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="description" placeholder="Description">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Product Price" id="price" class="form-control" name="price">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">İmage : </label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                                      </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <select class="form-control" name="category">
+                                            <%for(let i=0;i<categories.length;i++){%>
+                                                <option value="<%=categories[i]._id%>"><%=categories[i].name%></option>
+                                            <%}%>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="submit-button text-center">
+                                            <button class="btn hvr-hover" type="submit">Add Product</button>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Register -->
+
+    <%- include('../partials/_footer.ejs') -%>

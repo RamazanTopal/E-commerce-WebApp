@@ -1,0 +1,49 @@
+<%- include('../partials/_header.ejs') -%>
+<body>
+    <%- include('../partials/_navigation.ejs') -%>
+
+   <!-- Start All Title Box -->
+   <%- include('../partials/_alt-title.ejs') -%>
+   <!-- End All Title Box -->
+
+
+  <!-- Start My Account  -->
+  <div class="my-account-box-main">
+    <div class="container">
+        <div class="my-account-page">
+            <div class="row">
+                <div class="offset-md-1 col-md-10">
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <%for(let i=0;i<products.length;i++){%>
+                                <tr>
+                                    <th><%=products[i]._id%></th>
+                                    <td><%=products[i].name%></td>
+                                    <td><%=products[i].category.name%></td>
+                                    <td><%=products[i].price%></td>
+                                    <td class="float-right">
+                                        <a class="btn btn-warning text-white mr-2" href="/admin/product_update/<%=products[i]._id%>">Edit<i class="far fa-edit ml-2"></i></a>
+                                        <a class="btn btn-danger text-white mr-2" href="/admin/product_delete/<%= products[i]._id%>?_method=DELETE">Delete<i class="far fa-trash-alt ml-2"></i></a>
+                                    </td>
+                                </tr>
+                            <%}%>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End My Account -->
+
+   
+<%- include('../partials/_footer.ejs') -%></body>

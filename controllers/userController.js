@@ -17,6 +17,7 @@ exports.postLogin=async (req,res)=>{
             bcrypt.compare(password,user.password,(err,same)=>{
                 if(same){
                     req.session.userID=user._id;
+                    req.session.user=user;
                     res.redirect("/");
                 }else{
                     res.redirect("/login");
